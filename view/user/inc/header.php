@@ -83,36 +83,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="login.html">My Account</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="register.html">Sign in</a></li>
-                                </ul>
-                            </div>
-                            <!-- currency-menu -->
-                            <div class="dropdown currency">
-                                <button data-bs-toggle="dropdown">$ USD<i class="ion-ios-arrow-down"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">$ USD</a></li>
-                                    <li><a href="#">€ EUR</a></li>
-                                </ul>
-                            </div>
-                            <!-- language-menu -->
-                            <div class="dropdown language">
-                                <button data-bs-toggle="dropdown">
-                                    <img src="assets/images/icons/en.webp" alt="language-selector">English
-                                    <i class="ion-ios-arrow-down"></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">
-                                            <img src="assets/images/icons/en.webp" alt="French">
-                                            <span>English</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="assets/images/icons/fr.webp" alt="French">
-                                            <span>French</span>
-                                        </a>
-                                    </li>
+                                    <li><a href="login.php">Sign in</a></li>
                                 </ul>
                             </div>
                         </div>

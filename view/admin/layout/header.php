@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="assets\img\logo-fav.png">
-    <title>Beagle</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.webp">
+    <title>Harosa</title>
     <link rel="stylesheet" type="text/css" href="assets\lib\perfect-scrollbar\css\perfect-scrollbar.css">
     <link rel="stylesheet" type="text/css" href="assets\lib\material-design-icons\css\material-design-iconic-font.min.css">
     <link rel="stylesheet" type="text/css" href="assets\lib\jquery.vectormap\jquery-jvectormap-1.2.2.css">
@@ -19,7 +19,7 @@
     <div class="be-wrapper be-fixed-sidebar">
       <nav class="navbar navbar-expand fixed-top be-top-header">
         <div class="container-fluid">
-          <div class="be-navbar-header"><a class="navbar-brand" href="index.html"></a>
+          <div class="be-navbar-header"><a class="navbar-brand" href="admin.php">d</a>
           </div>
           <div class="page-title"><span>Dashboard</span></div>
           <div class="be-right-navbar">
@@ -113,9 +113,11 @@
                     <ul class="sub-menu">
                       <li><a href="loai_hang.php">Loại hàng</a>
                       </li>
-                      <li><a href="tables-datatables.html">Data Tables</a>
+                      <li><a href="hang.php">Hàng</a>
                       </li>
-                      <li><a href="tables-filters.html"><span class="badge badge-primary float-right">New</span>Table Filters</a>
+                      <li><a href="user.php">Người dùng</a>
+                      </li>
+                      <li><a href="hoa_don.php">Hóa đơn</a>
                       </li>
                     </ul>
                   </li>
