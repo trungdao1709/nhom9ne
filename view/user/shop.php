@@ -1,5 +1,8 @@
 <?php
-include 'inc/header.php'
+include 'inc/header.php';
+include "model/config.php";
+$query = "select * from hang";
+$hang = getAll($query);
 ?>
 
 <!-- top breadcrumb -->
@@ -61,29 +64,13 @@ include 'inc/header.php'
                                             <a href="single-product.html" class="thumbnail product-thumbnail">
                                                 <img src="assets/images/product/1.webp" alt="harosa product">
                                             </a>
-                                            <ul class="product-flag">
-                                                <li class="new"><span>New</span></li>
-                                            </ul>
                                             <div class="quick-view">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#product_modal" data-original-title="Quick View" class="quick_view"><i class="fa fa-search"></i></a>
                                             </div>
-                                            <div class="hook-reviews">
-                                                <div class="comments_note">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="shop.html">Studio Design</a>
-                                            </div>
                                             <h1> <a href="single-product.html" class="product_name" title="Hummingbird printed t-shirt">Hummingbird printed t-shirt</a></h1>
                                             <div class="product-price-and-shipping">
-                                                <span class="regular-price">$23.90</span>
                                                 <span class="price price-sale">$21.99</span>
                                             </div>
                                             <div class="cart">
@@ -174,9 +161,9 @@ include 'inc/header.php'
                                     </div>
                                 </div>
                                 <!-- single product end -->
-                               
-                            
-                               
+
+
+
                             </div>
                         </div>
 
@@ -195,15 +182,6 @@ include 'inc/header.php'
                                             <div class="quick-view">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#product_modal" data-original-title="Quick View" class="quick_view"><i class="fa fa-search"></i></a>
                                             </div>
-                                            <div class="hook-reviews">
-                                                <div class="comments_note">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="product_desc">
                                             <div class="manufacturer">
@@ -277,18 +255,6 @@ include 'inc/header.php'
                                             <div class="quick-view">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#product_modal" data-original-title="Quick View" class="quick_view"><i class="fa fa-search"></i></a>
                                             </div>
-                                            <div class="hook-reviews">
-                                                <div class="comments_note">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                            </div>
-                                            <div class="product-price-and-shipping_top">
-                                                <span class="discount-percentage discount-product">-8%</span>
-                                            </div>
                                         </div>
                                         <div class="product_desc">
                                             <div class="manufacturer">
@@ -311,7 +277,7 @@ include 'inc/header.php'
                                     </div>
                                 </div>
                                 <!-- single product list view end -->
-                               
+
                             </div>
                         </div>
                     </div>
@@ -346,7 +312,7 @@ include 'inc/header.php'
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="advertising">
                         <a href="shop.html"><img src="assets/images/banner/advertising.webp" alt="harosa images"></a>
                     </div>
