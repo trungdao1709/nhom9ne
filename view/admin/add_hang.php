@@ -1,63 +1,39 @@
 <?php
 include "layout/header.php";
+include "model/config.php";
 ?>
-
 </div>
 </div>
 <div class="be-content">
     <div class="page-head">
-        <h2 class="page-head-title">Data Tables</h2>
+        <h2 class="page-head-title">Loại hàng</h2>
         <nav aria-label="breadcrumb" role="navigation">
             <ol class="breadcrumb page-head-nav">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                <li class="breadcrumb-item active">Data Tables</li>
+                <li class="breadcrumb-item active">Loại hàng</li>
             </ol>
         </nav>
     </div>
     <div class="main-content container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card card-table">
-                    <div class="card-header">Default
-                        <div class="tools dropdown"><span class="icon mdi mdi-download"></span><a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"><span class="icon mdi mdi-more-vert"></span></a>
-                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-striped table-hover table-fw-widget" id="table1">
-                            <thead>
-                                <tr>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Hình ảnh</th>
-                                    <th>Giá</th>
-                                    <th>Ngày nhập</th>
-                                    <th>Số lượng</th>
-                                    <th>Mô tả</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>
-                                        Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td class="center"> 4</td>
-                                    <td class="center"></td>
-                                    <td class="center"></td>
-                                    <td class="center"></td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+        <div>
+        <form method="post" id="form_1" action="./controller/cate/save_addcate.php">
+    <div class="d-flex justify-content-center">
+        <div class="col-6">
+            <div class="form-group mb-3">
+                <label for="name_cate" class="form-label">Tên danh mục</label>
+                <input type="text" name="name" id="name_cate" class="form-control">
+                <div class="form-message text-danger mt-2"></div>
             </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-around">
+        <div class="col-3">
+            <button class="btn btn-outline-success" name="add_cate" type="submit">Submit</button>
+            <input type="button" onclick="location.href='?module=categories'" value="List" class="btn btn-outline-primary">
+        </div>
+    </div>
+</form>
         </div>
 
 
