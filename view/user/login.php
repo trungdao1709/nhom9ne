@@ -36,7 +36,7 @@ include 'inc/header.php';
                             <h3 class="custom-title">new customer</h3>
                             <p class="mtb-10"><strong>Register</strong></p>
                             <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made</p>
-                            <a class="customer-btn" href="logout.php">continue</a>
+                            <a class="customer-btn" href="register.php">continue</a>
                         </div>
                     </div>
                 </div>

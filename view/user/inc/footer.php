@@ -1,9 +1,4 @@
-<?php
-include 'inc/header.php';
-include "./nhom9ne/model/config.php";
-$query = "select * from chi_tiet_sp";
-$chi_tiet_sp = getAll($query);
-?>
+
     <!-- footer start -->
     <footer id="footer">
             <div class="footer-container">
