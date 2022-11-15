@@ -1,8 +1,6 @@
 <?php
 include "layout/header.php";
 include "model/config.php";
-$query = "select * from loai_hang";
-$loai_hang = getAll($query);
 ?>
 </div>
 </div>
@@ -18,35 +16,36 @@ $loai_hang = getAll($query);
         </nav>
     </div>
     <div class="main-content container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card card-table" style="display:inline-block ;">
-                    <div class="card-header">Default
-                        <div class="btn" style="margin-left: 1300px;"><a href="add_cate.php"><button>Thêm Sản phẩm</button></a></div>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-striped table-hover table-fw-widget" id="table1">
-                            <thead>
-                                <tr>
-                                    <th>Tên loại hàng</th>
-                                    <th class="center">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($loai_hang as $key => $value) : ?>
-                                    <tr class="odd gradeX">
-                                        <td><?php echo $value["ten_loai_hang"] ?></td>
-                                        <td class="center">
-                                            <a href="update_cate.php?id=<?php echo $value["id"] ?>"><button class="update">Update</button></a>
-                                            <a onclick="return confirm('Bạn có chắc muốn xóa ??')" href="./controller/cate/delete_cate.php?id=<?php echo $value["id"] ?>"><button class="delete">Delete</button></a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+        <div>
+        <form method="post" id="form_1" action="./controller/cate/save_addcate.php">
+    <div class="d-flex justify-content-center">
+        <div class="col-6">
+            <div class="form-group mb-3">
+                <label for="name_cate" class="form-label">Tên danh mục</label>
+                <input type="text" name="name" id="name_cate" class="form-control">
+                <div class="form-message text-danger mt-2"></div>
             </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-around">
+        <div class="col-3">
+            <button class="btn btn-outline-success" name="add_cate" type="submit">Submit</button>
+            <input type="button" onclick="location.href='?module=categories'" value="List" class="btn btn-outline-primary">
+        </div>
+    </div>
+</form>
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+            Validator({
+                form: '#form_1',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-message',
+                rules: [
+                    Validator.isRequired('#name_cate', 'Vui lòng nhập tên danh mục')
+                ],
+            });
+        });
+</script>
         </div>
 
 

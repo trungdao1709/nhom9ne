@@ -58,20 +58,21 @@ $hang = getAll($query);
                         <div id="grid" class="tab-pane fade show active">
                             <div class="row">
                                 <!-- single product -->
+                               <?php foreach ( $hang as $key => $value) : ?>
                                 <div class="col-sm-6 col-md-6 col-lg-4">
                                     <div class="product-miniature js-product-miniature">
                                         <div class="img_block">
-                                            <a href="single-product.html" class="thumbnail product-thumbnail">
-                                                <img src="assets/images/product/1.webp" alt="harosa product">
+                                            <a href="shop_detail.php" class="thumbnail product-thumbnail">
+                                                <img src="<?php echo $value["hinh_anh"]?>" alt="harosa product">
                                             </a>
                                             <div class="quick-view">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#product_modal" data-original-title="Quick View" class="quick_view"><i class="fa fa-search"></i></a>
                                             </div>
                                         </div>
                                         <div class="product_desc">
-                                            <h1> <a href="single-product.html" class="product_name" title="Hummingbird printed t-shirt">Hummingbird printed t-shirt</a></h1>
+                                            <h1> <a href="shop_detail.php" class="product_name" title="Hummingbird printed t-shirt"><?php echo $value["ten_hang"]?></a></h1>
                                             <div class="product-price-and-shipping">
-                                                <span class="price price-sale">$21.99</span>
+                                                <span class="price price-sale">$<?php echo $value["gia"]?></span>
                                             </div>
                                             <div class="cart">
                                                 <div class="product-add-to-cart">
@@ -81,6 +82,7 @@ $hang = getAll($query);
                                         </div>
                                     </div>
                                 </div>
+                                <?php endforeach ?>
                                 <!-- single product end -->
                                 <!-- single product -->
                                 <div class="col-sm-6 col-md-6 col-lg-4">
