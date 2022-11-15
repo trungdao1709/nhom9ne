@@ -4,6 +4,7 @@ include "model/config.php";
 $id= $_GET['id'];
 $query = "select * from hang where id = $id";
 $hang = getOne($query);
+$hang = getAll($query);
 
 ?>
 <!-- top breadcrumb -->
@@ -89,7 +90,7 @@ $hang = getOne($query);
                 </div>
             </div>
             <div class="col-lg-6">
-                <h1 class="h1 namne_details"><?php echo $hang["ten_hang"]?></h1>
+                <h1 class="h1 namne_details"><?php echo $value["ten_hang"]?></h1>
                 <div id="product_comments_block_extra" class="no-print">
                     <div class="hook-reviews">
                         <div class="comments_note">
