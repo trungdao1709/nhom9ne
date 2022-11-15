@@ -18,13 +18,9 @@ include "layout/header.php";
     <div class="main-content container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <div class="card card-table">
+                <div class="card card-table" style="display:inline-block ;">
                     <div class="card-header">Default
-                        <div class="tools dropdown"><span class="icon mdi mdi-download"></span><a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"><span class="icon mdi mdi-more-vert"></span></a>
-                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </div>
+                        <div class="btn" style="margin-left: 1300px;"><a href="add_hang.php"><button>Thêm Sản phẩm</button></a></div>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-hover table-fw-widget" id="table1">
