@@ -62,7 +62,7 @@ $hang = getAll($query);
                                 <div class="col-sm-6 col-md-6 col-lg-4">
                                     <div class="product-miniature js-product-miniature">
                                         <div class="img_block">
-                                            <a href="shop_detail.php" class="thumbnail product-thumbnail">
+                                            <a href="shop_detail.php?id=<?php echo $value["id"] ?>" class="thumbnail product-thumbnail">
                                                 <img src="<?php echo $value["hinh_anh"]?>" alt="harosa product">
                                             </a>
                                             <div class="quick-view">
@@ -70,7 +70,7 @@ $hang = getAll($query);
                                             </div>
                                         </div>
                                         <div class="product_desc">
-                                            <h1> <a href="shop_detail.php" class="product_name" title="Hummingbird printed t-shirt"><?php echo $value["ten_hang"]?></a></h1>
+                                            <h1> <a href="shop_detail.php?id=<?php echo $value["id"] ?>" class="product_name" title="Hummingbird printed t-shirt"><?php echo $value["ten_hang"]?></a></h1>
                                             <div class="product-price-and-shipping">
                                                 <span class="price price-sale">$<?php echo $value["gia"]?></span>
                                             </div>

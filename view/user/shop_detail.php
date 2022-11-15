@@ -1,5 +1,10 @@
 <?php
 include 'inc/header.php';
+include "model/config.php";
+$id= $_GET['id'];
+$query = "select * from hang where id = $id";
+$hang = getOne($query);
+
 ?>
 <!-- top breadcrumb -->
 <div class="top_breadcrumb">
@@ -56,25 +61,25 @@ include 'inc/header.php';
                     <div class="product-cover">
                         <div class="tab-content">
                             <div class="tab-pane active" id="red">
-                                <img src="assets/images/product/single/1.webp" alt="harosa single product">
+                                <img src="<?php echo $hang["hinh_anh"]?>" alt="harosa single product">
                                 <div class="layer hidden-sm-down">
                                     <i class="material-icons zoom-in"></i>
                                 </div>
                             </div>
                             <div class="tab-pane" id="orange">
-                                <img src="assets/images/product/single/2.webp" alt="harosa single product">
+                                <img src="<?php echo $hang["hinh_anh"]?>" alt="harosa single product">
                                 <div class="layer hidden-sm-down">
                                     <i class="material-icons zoom-in"></i>
                                 </div>
                             </div>
                             <div class="tab-pane" id="yellow">
-                                <img src="assets/images/product/single/3.webp" alt="harosa single product">
+                                <img src="<?php echo $hang["hinh_anh"]?>" alt="harosa single product">
                                 <div class="layer hidden-sm-down">
                                     <i class="material-icons zoom-in"></i>
                                 </div>
                             </div>
                             <div class="tab-pane" id="green">
-                                <img src="assets/images/product/single/4.webp" alt="harosa single product">
+                                <img src="<?php echo $hang["hinh_anh"]?>" alt="harosa single product">
                                 <div class="layer hidden-sm-down">
                                     <i class="material-icons zoom-in"></i>
                                 </div>
@@ -84,8 +89,7 @@ include 'inc/header.php';
                 </div>
             </div>
             <div class="col-lg-6">
-                <h1 class="h1 namne_details">Hummingbird printed t-shirt</h1>
-                <p class="reference">Reference: demo_1</p>
+                <h1 class="h1 namne_details"><?php echo $hang["ten_hang"]?></h1>
                 <div id="product_comments_block_extra" class="no-print">
                     <div class="hook-reviews">
                         <div class="comments_note">
