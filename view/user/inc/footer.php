@@ -1,3 +1,9 @@
+<?php
+include 'inc/header.php';
+include "./nhom9ne/model/config.php";
+$query = "select * from chi_tiet_sp";
+$chi_tiet_sp = getAll($query);
+?>
     <!-- footer start -->
     <footer id="footer">
             <div class="footer-container">
@@ -204,6 +210,9 @@
                                                                 <li><a href="#green" data-bs-toggle="tab">
                                                                     <img src="assets/images/product/thumbnails/4.webp" alt="">
                                                                 </a></li>
+                                                                <li><a href="#black" data-bs-toggle="tab">
+                                                                    <img src="assets/images/product/2.webp" alt="">
+                                                                </a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -234,6 +243,12 @@
                                                                 <i class="material-icons zoom-in"></i>
                                                             </div>
                                                         </div>
+                                                        <div class="tab-pane fade" id="black">
+                                                            <img src="assets/images/product/2.webp " alt="harosa single product">
+                                                            <div class="layer hidden-sm-down">
+                                                                <i class="material-icons zoom-in"></i>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -241,7 +256,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <h1 class="h1 namne_details">Hummingbird printed t-shirt</h1>
-                                        <p class="reference">Reference: demo_1</p>
+                                       
                                         <div id="product_comments_block_extra" class="no-print">
                                             <div class="hook-reviews">
                                                 <div class="comments_note">
@@ -329,10 +344,12 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                             <!-- single product area -->
                         </div>
+
                     </div><!-- .modal-content -->
                 </div><!-- .modal-dialog -->
             </div><!-- END Modal -->
