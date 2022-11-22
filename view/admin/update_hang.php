@@ -1,6 +1,9 @@
 <?php
 include "layout/header.php";
 include "model/config.php";
+$id= $_GET['id'];
+$query = "select * from hang where id = $id";
+$hang = getOne($query);
 ?>
 </div>
 </div>
@@ -17,70 +20,60 @@ include "model/config.php";
     </div>
     <div class="main-content container-fluid">
         <div>
-            <form method="post" id="form_prd" enctype="multipart/form-data" action="./controller/product/save_addhang.php">
-                <div class="row d-flex flex-wrap">
-                    <div class="col-4">
-                        <div class="form-group mb-3">
-                            <label for="" class="form-label">Loại đặc biệt ?</label>
-                            <div class="form-control">
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" id="special" class="form-check-input" name="special" value="1"> Đặc biệt
-                                    </label>
-                                </div>
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" id="special" class="form-check-input" name="special" value="0" checked> Bình thường
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+        <form method="post" id="form_prd" enctype="multipart/form-data">
+    <div class="row d-flex flex-wrap">
+        <div class="col-4">
+            <div class="form-group mb-3">
+                <label for="" class="form-label">Loại đặc biệt ?</label>
+                <div class="form-control">
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" id="special" class="form-check-input" name="special" value="1"> Đặc biệt
+                        </label>
                     </div>
-                    <div class="col-4">
-                        <div class="form-group mb-3">
-                            <label for="" class="form-label">Tên sản phẩm</label>
-                            <input type="text" name="name" id="name" class="form-control">
-                            <div class="form-message text-danger mt-2"></div>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="" class="form-label">Ảnh sản phẩm</label>
-                            <input type="file" name="image" id="image" class="form-control">
-                            <div class="form-message text-danger mt-2"></div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-group mb-3">
-                            <label for="" class="form-label">Đơn giá</label>
-                            <input type="text" name="price" id="price" class="form-control">
-                            <div class="form-message text-danger mt-2"></div>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="" class="form-label">Loại hàng</label>
-                            <select name="id_cate" id="id_cate" class="form-control">
-                                <option value="" disabled selected>Select Category</option>
-                                <?php foreach ($cate as $row => $values) { ?>
-                                    <option value="<?= $values['id_cate'] ?>"><?= $values['name_cate'] ?></option>
-                                <?php } ?>
-                            </select>
-                            <div class="form-message text-danger mt-2"></div>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="" class="form-label">Số lượng</label>
-                            <input type="text" name="so_luong" id="so_luong" class="form-control">
-                            <div class="form-message text-danger mt-2"></div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <label for="" class="form-label">Mô tả</label>
-                        <textarea name="mo_ta" id="mo_ta" class="form-control" cols="30" rows="10"></textarea>
-                        <div class="form-message text-danger mt-2"></div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" id="special" class="form-check-input" name="special" value="0" checked> Bình thường
+                        </label>
                     </div>
                 </div>
-                <div class="mt-5 mb-5">
-                    <input type="submit" name="add_product" value="Submit" class="btn btn-outline-success">
-                    <input type="button" onclick="location.href='?module=products'" value="List" class="btn btn-outline-primary">
-                </div>
-            </form>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group mb-3">
+                <label for="" class="form-label">Tên sản phẩm</label>
+                <input type="text" name="name" id="name" class="form-control" value="<?php echo $hang["ten_hang"] ?>">
+                <div class="form-message text-danger mt-2"></div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="" class="form-label">Ảnh sản phẩm</label>
+                <input type="file" name="image_update" id="image" class="form-control">
+                <input type="text" name="image" id="" hidden class="form-control" value="<?php echo $hang["hinh_anh"] ?>">
+            <div class="form-message text-danger mt-2"></div>
+        </div>
+        <div class="col-4">
+            <div class="form-group mb-3">
+                <label for="" class="form-label">Đơn giá</label>
+                <input type="text" name="price" id="price" class="form-control" value="<?php echo $hang["gia"] ?>">
+                <div class="form-message text-danger mt-2"></div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="" class="form-label">Số lượng</label>
+                <input type="text" name="so_luong" id="quantity" class="form-control" value="<?php echo $hang["so_luong"] ?>">
+                <div class="form-message text-danger mt-2"></div>
+            </div>
+        </div>
+        <div class="col-12">
+            <label for="" class="form-label">Mô tả</label>
+            <textarea name="mo_ta" id="mo_ta" class="form-control" cols="30" rows="10" value="<?php echo $hang["mo_ta"] ?>"></textarea>
+            <div class="form-message text-danger mt-2"></div>
+        </div>
+    </div>
+    <div class="mt-5 mb-5">
+            <button class="btn btn-outline-success" name="add_cate" type="submit">Submit</button>
+            <input type="button" onclick="location.href='?module=categories'" value="List" class="btn btn-outline-primary">
+    </div>
+</form>
 
         </div>
 

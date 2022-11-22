@@ -1,5 +1,8 @@
 <?php
 include "layout/header.php";
+include "model/config.php";
+$query = "select * from hang";
+$hang = getAll($query);
 ?>
 
 </div>
@@ -36,18 +39,22 @@ include "layout/header.php";
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php foreach ($hang as $key => $value) : ?>
                                 <tr class="odd gradeX">
-                                    <td>Trident</td>
+                                    <td><?php echo $value["ten_hang"]?></td>
                                     <td>
-                                        Internet
-                                        Explorer 4.0
+                                        <img src="assets/images/product/<?php echo $value['hinh_anh'] ?>" alt="">
                                     </td>
-                                    <td>Win 95+</td>
-                                    <td class="center"> 4</td>
-                                    <td class="center"></td>
-                                    <td class="center"></td>
-                                    <td class="center"></td>
+                                    <td><?php echo $value["gia"]?></td>
+                                    <td class="center"><?php echo $value["ngay_nhap"]?></td>
+                                    <td class="center"><?php echo $value["so_luong"]?></td>
+                                    <td class="center"><?php echo $value["mo_ta"]?></td>
+                                    <td class="center">
+                                            <a href="update_hang.php?id=<?php echo $value["id"] ?>"><button class="update">Update</button></a>
+                                            <a onclick="return confirm('Bạn có chắc muốn xóa ??')" href="./controller/product/delete_hang.php?id=<?php echo $value["id"] ?>"><button class="delete">Delete</button></a>
+                                        </td>
                                 </tr>
+                            <?php endforeach ?>
                                 
                             </tbody>
                         </table>

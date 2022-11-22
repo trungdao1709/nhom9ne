@@ -44,16 +44,16 @@ $hang = getOne($query);
                         <div class="thumb-container">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#red" data-bs-toggle="tab">
-                                        <img src="assets/images/product/thumbnails/1.webp" alt="">
+                                        <img src="<?php echo $hang["hinh_anh"]?>" alt="">
                                     </a></li>
                                 <li><a href="#orange" data-bs-toggle="tab">
-                                        <img src="assets/images/product/thumbnails/2.webp" alt="">
+                                        <img src="<?php echo $hang["hinh_anh"]?>" alt="">
                                     </a></li>
                                 <li><a href="#yellow" data-bs-toggle="tab">
-                                        <img src="assets/images/product/thumbnails/3.webp" alt="">
+                                        <img src="<?php echo $hang["hinh_anh"]?>" alt="">
                                     </a></li>
                                 <li><a href="#green" data-bs-toggle="tab">
-                                        <img src="assets/images/product/thumbnails/4.webp" alt="">
+                                        <img src="<?php echo $hang["hinh_anh"]?>" alt="">
                                     </a></li>
                             </ul>
                         </div>
