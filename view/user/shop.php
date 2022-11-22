@@ -63,7 +63,7 @@ $hang = getAll($query);
                                     <div class="product-miniature js-product-miniature">
                                         <div class="img_block">
                                             <a href="shop_detail.php?id=<?php echo $value["id"] ?>" class="thumbnail product-thumbnail">
-                                                <img src="<?php echo $value["hinh_anh"]?>" alt="harosa product">
+                                                <img src="assets/images/product/<?php echo $value['hinh_anh'] ?>"  alt="harosa product">
                                             </a>
                                             <div class="quick-view">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#product_modal" data-original-title="Quick View" class="quick_view"><i class="fa fa-search"></i></a>
@@ -76,7 +76,7 @@ $hang = getAll($query);
                                             </div>
                                             <div class="cart">
                                                 <div class="product-add-to-cart">
-                                                    <a href="cart.html">Add to cart</a>
+                                                    <a href="cart.php">Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>
