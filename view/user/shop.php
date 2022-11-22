@@ -1,9 +1,17 @@
 <?php
 include 'inc/header.php';
 include "model/config.php";
-$query = "select * from hang";
+
+if(isset($_POST["search"])){
+    $search=$_POST["input_search"];
+    $querySearch="select * from hang where ten_hang like '%$search%'";
+    $hang= getAll($querySearch);
+    
+} else{
+    $query = "select * from hang";
 $hang = getAll($query);
-?>    
+}
+?>
 
 <!-- top breadcrumb -->
 <div class="top_breadcrumb">
@@ -17,6 +25,12 @@ $hang = getAll($query);
                     <li><a href="#"><span>Shop</span></a></li>
                 </ol>
             </nav>
+            <div class="woocommerce-ordering">
+                <form method="POST" action="./shop.php">
+                    <input class="text_input" value="" name="input_search" placeholder="Search" type="text">
+                    <button type="submit" name="search"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -53,86 +67,86 @@ $hang = getAll($query);
                                 </div>
                             </form>
                         </div>
+
                     </div>
                     <div class="shop-page-product-area tab-content">
                         <div id="grid" class="tab-pane fade show active">
                             <div class="row">
                                 <!-- single product -->
-                                <?php foreach ($hang as $key => $value) :?>
-                                <div class="col-sm-6 col-md-6 col-lg-4">
-                                    <div class="product-miniature js-product-miniature">
-                                        <div class="img_block">
-                                            <a href="single-product.html" class="thumbnail product-thumbnail">
-                                                <img src="<?php echo $value["hinh_anh"]?>" alt="harosa product">
-                                            </a>
-                                            <div class="quick-view">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#product_modal" data-original-title="Quick View" class="quick_view"><i class="fa fa-search"></i></a>
+                                <?php foreach ($hang as $key => $value) : ?>
+                                    <div class="col-sm-6 col-md-6 col-lg-4">
+                                        <div class="product-miniature js-product-miniature">
+                                            <div class="img_block">
+                                                <a href="shop_detail.php?id=<?php echo $value["id"] ?>" class="thumbnail product-thumbnail">
+                                                    <img src="<?php echo $value["hinh_anh"] ?>" alt="harosa product">
+                                                </a>
+                                                <div class="quick-view">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#product_modal" data-original-title="Quick View" class="quick_view"><i class="fa fa-search"></i></a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="product_desc">
-                                            <h1> <a href="single-product.html" class="product_name" title="Hummingbird printed t-shirt"><?php echo $value["ten_hang"]?></a></h1>
-                                            <div class="product-price-and-shipping">
-                                                <span class="price price-sale"><?php echo $value["gia"]?></span>
-                                            </div>
-                                            <div class="cart">
-                                                <div class="product-add-to-cart">
-                                                    <a href="cart.html">Add to cart</a>
+                                            <div class="product_desc">
+                                                <h1> <a href="shop_detail.php?id=<?php echo $value["id"] ?>" class="product_name" title="Hummingbird printed t-shirt"><?php echo $value["ten_hang"] ?></a></h1>
+                                                <div class="product-price-and-shipping">
+                                                    <span class="price price-sale">$<?php echo $value["gia"] ?></span>
+                                                </div>
+                                                <div class="cart">
+                                                    <div class="product-add-to-cart">
+                                                        <a href="cart.html">Add to cart</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <?php 
-                                endforeach
-                                ?>
+                                <?php endforeach ?>
+
                                 <!-- single product end -->
                                 <!-- single product -->
-                              
+
                             </div>
                         </div>
 
                         <div id="list" class="tab-pane fade">
                             <div class="row">
                                 <!-- single product list view -->
-                                <?php foreach ($hang as $key => $value) :?>
-                                <div class="col-md-12">
-                                    <div class="product-miniature js-product-miniature">
-                                        <div class="img_block">
-                                            <a href="single-product.html" class="thumbnail product-thumbnail">
-                                                <img src="<?php echo $value["hinh_anh"]?>" alt="harosa product">
-                                            </a>
-                                            <ul class="product-flag">
-                                                <li class="new"><span>New</span></li>
-                                            </ul>
-                                            <div class="quick-view">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#product_modal" data-original-title="Quick View" class="quick_view"><i class="fa fa-search"></i></a>
+                                <?php foreach ($hang as $key => $value) : ?>
+                                    <div class="col-md-12">
+                                        <div class="product-miniature js-product-miniature">
+                                            <div class="img_block">
+                                                <a href="single-product.html" class="thumbnail product-thumbnail">
+                                                    <img src="<?php echo $value["hinh_anh"] ?>" alt="harosa product">
+                                                </a>
+                                                <ul class="product-flag">
+                                                    <li class="new"><span>New</span></li>
+                                                </ul>
+                                                <div class="quick-view">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#product_modal" data-original-title="Quick View" class="quick_view"><i class="fa fa-search"></i></a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="shop.html">Studio Design</a>
-                                            </div>
-                                            <h1><a href="single-product.html" class="product_name" title="Hummingbird printed t-shirt"><?php echo $value["ten_hang"]?></a></h1>
-                                            <div class="product-desc">
-                                                <p><span>Regular fit, round neckline, short sleeves. Made of extra long staple pima cotton. </span></p>
-                                            </div>
-                                            <div class="product-price-and-shipping">
-                                                <span class="price price-sale"><?php echo $value["gia"]?></span>
-                                            </div>
-                                            <div class="cart">
-                                                <div class="product-add-to-cart">
-                                                    <a href="cart.html">Add to cart</a>
+                                            <div class="product_desc">
+                                                <div class="manufacturer">
+                                                    <a href="shop.html">Studio Design</a>
+                                                </div>
+                                                <h1><a href="single-product.html" class="product_name" title="Hummingbird printed t-shirt"><?php echo $value["ten_hang"] ?></a></h1>
+                                                <div class="product-desc">
+                                                    <p><span>Regular fit, round neckline, short sleeves. Made of extra long staple pima cotton. </span></p>
+                                                </div>
+                                                <div class="product-price-and-shipping">
+                                                    <span class="price price-sale"><?php echo $value["gia"] ?></span>
+                                                </div>
+                                                <div class="cart">
+                                                    <div class="product-add-to-cart">
+                                                        <a href="cart.html">Add to cart</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <?php 
+                                <?php
                                 endforeach
                                 ?>
                                 <!-- single product list view end -->
                                 <!-- single product list view -->
-                                
+
                             </div>
                         </div>
                     </div>

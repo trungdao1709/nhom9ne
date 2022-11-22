@@ -4,7 +4,6 @@ include "model/config.php";
 $id= $_GET['id'];
 $query = "select * from hang where id = $id";
 $hang = getOne($query);
-$hang = getAll($query);
 
 ?>
 <!-- top breadcrumb -->
@@ -43,20 +42,7 @@ $hang = getAll($query);
                 <div class="images-container">
                     <div class="js-qv-mask mask pos_content">
                         <div class="thumb-container">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#red" data-bs-toggle="tab">
-                                        <img src="assets/images/product/thumbnails/1.webp" alt="">
-                                    </a></li>
-                                <li><a href="#orange" data-bs-toggle="tab">
-                                        <img src="assets/images/product/thumbnails/2.webp" alt="">
-                                    </a></li>
-                                <li><a href="#yellow" data-bs-toggle="tab">
-                                        <img src="assets/images/product/thumbnails/3.webp" alt="">
-                                    </a></li>
-                                <li><a href="#green" data-bs-toggle="tab">
-                                        <img src="assets/images/product/thumbnails/4.webp" alt="">
-                                    </a></li>
-                            </ul>
+                            
                         </div>
                     </div>
                     <div class="product-cover">
@@ -69,7 +55,7 @@ $hang = getAll($query);
                             </div>
                             <div class="tab-pane" id="orange">
                                 <img src="<?php echo $hang["hinh_anh"]?>" alt="harosa single product">
-                                <div class="layer hidden-sm-down">
+<div class="layer hidden-sm-down">
                                     <i class="material-icons zoom-in"></i>
                                 </div>
                             </div>
@@ -90,7 +76,7 @@ $hang = getAll($query);
                 </div>
             </div>
             <div class="col-lg-6">
-                <h1 class="h1 namne_details"><?php echo $value["ten_hang"]?></h1>
+                <h1 class="h1 namne_details"><?php echo $hang["ten_hang"]?></h1>
                 <div id="product_comments_block_extra" class="no-print">
                     <div class="hook-reviews">
                         <div class="comments_note">
@@ -128,7 +114,7 @@ $hang = getAll($query);
                     <div class="product-actions">
                         <form action="#">
                             <div class="product-variants">
-                                <div class="product-variants-item">
+<div class="product-variants-item">
                                     <span class="control-label">Size</span>
                                     <select class="form-control form-control-select" id="group_1">
                                         <option value="1" title="S" selected="selected">S</option>
@@ -169,7 +155,7 @@ $hang = getAll($query);
                                     <ul>
                                         <li class="facebook"><a href="#" title="Share" target="_blank">Share</a></li>
                                         <li class="twitter"><a href="#" title="Tweet" target="_blank">Tweet</a></li>
-                                        <li class="googleplus"><a href="#" title="Google+" target="_blank">Google+</a></li>
+<li class="googleplus"><a href="#" title="Google+" target="_blank">Google+</a></li>
                                         <li class="pinterest"><a href="#" title="Pinterest" target="_blank">Pinterest</a></li>
                                     </ul>
                                 </div>
@@ -222,7 +208,7 @@ $hang = getAll($query);
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>
                                 </div>

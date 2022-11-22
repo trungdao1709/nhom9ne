@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -123,8 +124,8 @@
                                     <i class="fa fa-search"></i>
                                 </button>
                                 <div class="search_top dropdown-menu">
-                                    <form method="get" action="#">
-                                        <input class="text_input" name="s" value="" placeholder="Search" type="text">
+                                    <form method="POST" action="./header.php">
+                                        <input class="text_input" name="search" value="" placeholder="Search" type="text">
                                         <button type="submit"><i class="fa fa-search"></i></button>
                                     </form>
                                 </div>
