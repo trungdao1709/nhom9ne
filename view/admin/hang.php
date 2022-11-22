@@ -1,5 +1,8 @@
 <?php
 include "layout/header.php";
+include "model/config.php";
+$query = "select * from hang";
+$hang = getAll($query);
 ?>
 
 </div>
@@ -18,13 +21,9 @@ include "layout/header.php";
     <div class="main-content container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <div class="card card-table">
+                <div class="card card-table" style="display:inline-block ;">
                     <div class="card-header">Default
-                        <div class="tools dropdown"><span class="icon mdi mdi-download"></span><a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"><span class="icon mdi mdi-more-vert"></span></a>
-                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </div>
+                        <div class="btn" style="margin-left: 1300px;"><a href="add_hang.php"><button>Thêm Sản phẩm</button></a></div>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-hover table-fw-widget" id="table1">
@@ -40,18 +39,22 @@ include "layout/header.php";
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php foreach ($hang as $key => $value) : ?>
                                 <tr class="odd gradeX">
-                                    <td>Trident</td>
+                                    <td><?php echo $value["ten_hang"]?></td>
                                     <td>
-                                        Internet
-                                        Explorer 4.0
+                                        <img src="assets/images/product/<?php echo $value['hinh_anh'] ?>" alt="">
                                     </td>
-                                    <td>Win 95+</td>
-                                    <td class="center"> 4</td>
-                                    <td class="center"></td>
-                                    <td class="center"></td>
-                                    <td class="center"></td>
+                                    <td><?php echo $value["gia"]?></td>
+                                    <td class="center"><?php echo $value["ngay_nhap"]?></td>
+                                    <td class="center"><?php echo $value["so_luong"]?></td>
+                                    <td class="center"><?php echo $value["mo_ta"]?></td>
+                                    <td class="center">
+                                            <a href="update_hang.php?id=<?php echo $value["id"] ?>"><button class="update">Update</button></a>
+                                            <a onclick="return confirm('Bạn có chắc muốn xóa ??')" href="./controller/product/delete_hang.php?id=<?php echo $value["id"] ?>"><button class="delete">Delete</button></a>
+                                        </td>
                                 </tr>
+                            <?php endforeach ?>
                                 
                             </tbody>
                         </table>

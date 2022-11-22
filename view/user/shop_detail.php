@@ -42,10 +42,21 @@ $hang = getOne($query);
                 <div class="images-container">
                     <div class="js-qv-mask mask pos_content">
                         <div class="thumb-container">
-                            
+                            <ul class="nav nav-tabs">
+                                        <img src="<?php echo $hang["hinh_anh"]?>" alt="">
+                                    </a></li>
+                                <li><a href="#orange" data-bs-toggle="tab">
+                                        <img src="<?php echo $hang["hinh_anh"]?>" alt="">
+                                    </a></li>
+                                <li><a href="#yellow" data-bs-toggle="tab">
+                                        <img src="<?php echo $hang["hinh_anh"]?>" alt="">
+                                    </a></li>
+                                <li><a href="#green" data-bs-toggle="tab">
+                                        <img src="<?php echo $hang["hinh_anh"]?>" alt="">
+                                    </a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="product-cover">
                         <div class="tab-content">
                             <div class="tab-pane active" id="red">
                                 <img src="<?php echo $hang["hinh_anh"]?>" alt="harosa single product">

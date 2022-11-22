@@ -282,7 +282,6 @@ $loai_hang = getOne($query);
     <script src="assets\lib\datatables\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            //-initialize the javascript
             App.init();
             App.dataTables();
         });

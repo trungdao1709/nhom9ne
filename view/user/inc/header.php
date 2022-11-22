@@ -135,9 +135,7 @@
                             <div class="dropdown">
                                 <button class="cart-icon" data-bs-toggle="dropdown">
                                     <i class="fa fa-shopping-basket"></i>
-                                    <span class="item_txt"> Cart</span> 
-                                    <span class="item_count">(2)</span>
-                                    <span class="item_total">- $57.99</span>
+                                    <a href="cart.php"><span class="item_txt"> Cart</span> </a>
                                 </button>
                                 <div class="header-cart dropdown-menu">
                                     <ul>
